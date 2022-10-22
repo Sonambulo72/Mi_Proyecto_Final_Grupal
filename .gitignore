@@ -58,7 +58,7 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-#esta linea de abajp es es para no subir la BBDD a el github
+#esta linea de abajo es para no subir la BBDD a el github
 db.sqlite3 
 db.sqlite3-journal
 
