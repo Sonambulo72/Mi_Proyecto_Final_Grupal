@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ejemplo.apps.EjemploConfig',
-    'blog.apps.BlogConfig',
+    'ejemplo.apps.EjemploConfig', #se agrega la app ejemplo
+    'blog.apps.BlogConfig', # se agrega la app blog
 ]
 
 MIDDLEWARE = [
@@ -105,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'es'
+LANGUAGE_CODE = 'es' # se agrega el idioma español en la web
 
 TIME_ZONE = 'UTC'
 
