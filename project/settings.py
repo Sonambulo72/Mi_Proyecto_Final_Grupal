@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application definition
-
+# se registan las dos APP blog y ejemplo
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
