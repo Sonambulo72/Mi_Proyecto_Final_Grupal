@@ -1,0 +1,15 @@
+{% extends 'ejemplo/base.html' %}
+
+{% block contenido %}
+{% for familiar in familiar %}
+<ul>
+    <li> {{familiar}} </li>
+</ul>
+{% endfor %}
+{%endblock %}
+
+{% block titulo%} 
+    Lista de todos mis Familiares (por Clases)
+{% endblock %}
+
+

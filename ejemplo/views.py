@@ -3,7 +3,7 @@ from ejemplo.models import Familiar
 from ejemplo.forms import Buscar 
 from django.views import View 
 
-
+#resueve lista de personas por Funcion
 def monstrar_familiares(request):
   lista_familiares = Familiar.objects.all()
   return render(request, "ejemplo/familiares.html", 
@@ -31,3 +31,11 @@ class BuscarFamiliar(View):
                                                         'lista_familiares':lista_familiares})
 
         return render(request, self.template_name, {"form": form})
+
+#resolver listar familiares con clases
+class ListarPersona(View):
+    template_name = "ejemplo/lista_de_personas.html"
+
+    def get(self, request):
+        familiar = Familiar.objects.all()
+        return render(request, self.template_name,{"familiar" : familiar})
