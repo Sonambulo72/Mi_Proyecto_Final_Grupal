@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from ejemplo.models import Familiar
-from ejemplo.forms import Buscar 
-from django.views import View 
+from ejemplo.forms import Buscar, PersonaForm 
+from django.views import View
 
 #resueve lista de personas por Funcion
 def monstrar_familiares(request):
@@ -39,3 +39,23 @@ class ListarPersona(View):
     def get(self, request):
         familiar = Familiar.objects.all()
         return render(request, self.template_name,{"familiar" : familiar})
+
+#Carga de familiares
+class CargarPersona(View):
+    template_name = "ejemplo/carga_de_personas.html"
+    form_class = PersonaForm
+    initial = {"nombre": "", "direccion": "", "numero_pasaporte": ""}
+
+
+    def get(self, request):
+        form = self.form_class(initial=self.initial)
+        return render(request, self.template_name,{"form" : form})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save()
+            form = self.form_class(initial=self.initial)
+
+        return render(request, self.template_name, {"form": form})
+
