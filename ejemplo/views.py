@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from ejemplo.models import Familiar
-from ejemplo.forms import Buscar, PersonaForm 
+from ejemplo.models import Familiar,Auto,Moto # importo las clases de models
+from ejemplo.forms import Buscar, PersonaForm,AutoForm,MotoForm
 from django.views import View
 
 #resueve lista de personas por Funcion
@@ -59,3 +59,60 @@ class CargarPersona(View):
 
         return render(request, self.template_name, {"form": form})
 
+# Defino las vistas de clases de las dos nuevas clases
+
+#Listar Autos
+class ListarAutos(View):
+    template_name = "ejemplo/lista_de_autos.html"
+
+    def get(self, request):
+        auto = Auto.objects.all()
+        return render(request, self.template_name,{"auto" : auto})
+
+#Carga de autos
+class CargarAutos(View):
+    template_name = "ejemplo/carga_de_autos.html"
+    form_class = AutoForm
+    initial = {"patente": "", "marca": "", "kms": ""}
+
+
+    def get(self, request):
+        form = self.form_class(initial=self.initial)
+        return render(request, self.template_name,{"form" : form})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save()
+            form = self.form_class(initial=self.initial)
+
+        return render(request, self.template_name, {"form": form})
+
+#Defino las clases para moto
+
+#resolver listar Motos con clases
+class ListarMotos(View):
+    template_name = "ejemplo/lista_de_motos.html"
+
+    def get(self, request):
+        moto = Moto.objects.all()
+        return render(request, self.template_name,{"moto" : moto})
+
+#Carga de motos
+class CargarMotos(View):
+    template_name = "ejemplo/carga_de_motos.html"
+    form_class = MotoForm
+    initial = {"patente": "", "marca": "", "cilindrada": ""}
+
+
+    def get(self, request):
+        form = self.form_class(initial=self.initial)
+        return render(request, self.template_name,{"form" : form})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save()
+            form = self.form_class(initial=self.initial)
+
+        return render(request, self.template_name, {"form": form})

@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ejemplo.views import ( ListarPersona, monstrar_familiares, BuscarFamiliar,CargarPersona) # import de URL ejemplo
+from ejemplo.views import ( ListarPersona, monstrar_familiares, BuscarFamiliar,CargarPersona,
+                    CargarAutos,ListarAutos,CargarMotos,ListarMotos) # import de URL ejemplo
 from blog.views import index as blog_index # import de URL Blog
-from ejemplo.models import Familiar
+from ejemplo.models import Familiar,Auto,Moto
 
 
 urlpatterns = [
@@ -27,4 +28,8 @@ urlpatterns = [
     path('mi-familia/buscar', BuscarFamiliar.as_view()),
     path('mi-familia/listar',ListarPersona.as_view()),
     path('mi-familia/cargar',CargarPersona.as_view()),
+    path('mi-auto/listarautos',ListarAutos.as_view()),
+    path('mi-auto/cargarautos',CargarAutos.as_view()),
+    path('mi-moto/listarmotos',ListarMotos.as_view()),
+    path('mi-moto/cargarmotos',CargarMotos.as_view()),
 ]

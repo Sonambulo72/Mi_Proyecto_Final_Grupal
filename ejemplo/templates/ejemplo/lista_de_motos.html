@@ -1,0 +1,15 @@
+{% extends 'ejemplo/base.html' %}
+
+{% block contenido %}
+{% for moto in moto %}
+<ul>
+    <li> {{moto}} </li>
+</ul>
+{% endfor %}
+{%endblock %}
+
+{% block titulo%} 
+    Lista de todos las motos
+{% endblock %}
+
+

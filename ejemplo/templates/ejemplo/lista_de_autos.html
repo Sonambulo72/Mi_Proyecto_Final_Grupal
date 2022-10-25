@@ -1,0 +1,15 @@
+{% extends 'ejemplo/base.html' %}
+
+{% block contenido %}
+{% for auto in auto %}
+<ul>
+    <li> {{auto}} </li>
+</ul>
+{% endfor %}
+{%endblock %}
+
+{% block titulo%} 
+    Lista de todos los autos
+{% endblock %}
+
+

@@ -1,0 +1,16 @@
+{% extends 'ejemplo/base.html' %}
+
+{% block contenido %}
+    <form action="/mi-auto/cargarautos" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Cargar">
+    </form>
+
+{%endblock %}
+
+{% block titulo%} 
+    Carga de Autos
+{% endblock %}
+
+
