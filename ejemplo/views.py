@@ -2,7 +2,7 @@ from django.shortcuts import render
 from ejemplo.models import Familiar,Auto,Moto # importo las clases de models
 from ejemplo.forms import Buscar, PersonaForm,AutoForm,MotoForm
 from django.views import View
-from django.views.generic import ListView,CreateView,DeleteView,UpdateView #generic views
+
 
 #resueve lista de personas por Funcion
 def monstrar_familiares(request):
@@ -118,20 +118,3 @@ class CargarMotos(View):
 
         return render(request, self.template_name, {"form": form})
 
-#generic views
-class FamiliarList(ListView):
-  model = Familiar
-
-class FamiliarCrear(CreateView):
-  model = Familiar
-  success_url = "/panel-familia"
-  fields = ["nombre", "direccion", "numero_pasaporte"]
-
-class FamiliarBorrar(DeleteView):
-  model = Familiar
-  success_url = "/panel-familia"
-
-class FamiliarActualizar(UpdateView):
-  model = Familiar
-  success_url = "/panel-familia"
-  fields = ["nombre", "direccion", "numero_pasaporte"]
