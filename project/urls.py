@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ejemplo.views import ( ListarPersona, monstrar_familiares, BuscarFamiliar,CargarPersona,
-                    CargarAutos,ListarAutos,CargarMotos,ListarMotos) # import de URL ejemplo
+                    CargarAutos,ListarAutos,CargarMotos,ListarMotos,
+                    FamiliarList,FamiliarCrear,FamiliarBorrar,FamiliarActualizar) # import de URL ejemplo
 from blog.views import index as blog_index # import de URL Blog
 from ejemplo.models import Familiar,Auto,Moto
 
@@ -32,4 +33,8 @@ urlpatterns = [
     path('mi-auto/cargarautos',CargarAutos.as_view()),
     path('mi-moto/listarmotos',ListarMotos.as_view()),
     path('mi-moto/cargarmotos',CargarMotos.as_view()),
+    path('panel-familia/', FamiliarList.as_view()), 
+    path('panel-familia/crear', FamiliarCrear.as_view()),
+    path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view()),
+    path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
 ]
