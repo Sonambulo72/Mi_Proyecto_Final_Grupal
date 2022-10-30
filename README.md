@@ -23,7 +23,7 @@ El funcionamiento se basa en de aplicaciones (blog y ejemplo) para desarrollar e
 
 3- Se utiliza para realizar el código VScode y DJANGO (framework web de alto nivel)
 
-4- //Roadmap en definición aun//
+4- //Roadmap en definición aun///
 
 
 
