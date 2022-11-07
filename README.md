@@ -1,11 +1,10 @@
 # mi-proyecto-final-Grupal (Comisión 44065)
 
 Este es el proyecto final de Python para CODERHOUSE
-
 Autores:
   - Jorge Bouza
   - Joshua Roig
-  - Jose Luis Esperon
+  - José Luis Esperón
 
 Tabla de contenido
 1- Descripción
@@ -17,27 +16,27 @@ Tabla de contenido
 El proyecto radica en el armado de un blog cuyo contenido se realiza mediante un acceso de usuario y password
 Por otro lado, el programa utiliza un ABM de personas.
 
-2-  Requerimientos
-    Instalacion
-    Para la instalacion se requiere:
+2- Requerimientos
+    Instalación
+    Para la instalación se requiere:
 
-Revisar la version de python
-Este proyecto se realizo usando la version python 3.10.8,por ende ser recomienda usar dicha version o superior.
+Revisar la versión de python
+Este proyecto se realizo usando la versión python 3.10.8,por ende ser recomienda usar dicha versión o superior.
 
 Para revisar la compatibilidad usar:
 
 c:\> py --version
 c:\> Python 3.8.0
 
-Instalacion de las dependencias
-Para instalar las dependencias precisas ejecutar pip install, asegurandote que estas en la carpeta raiz. Por favor revisar la carpeta raiz requirements.txt para mas informacion.
+instalación de las dependencias
+Para instalar las dependencias precisas ejecutar pip install, asegurándote que estas en la carpeta raiz. Por favor revisar la carpeta raíz requirements.txt para más información.
 
 > pip install -r requirements.txt
 
 En algunos SO se requiere ejecutar con pip3 en lugar de pip.
 
-Configuracion de la aplicacion DJANGO
-Una vez instaladas las dependencias, se debe ejecutar algunos comando en DJANGO.
+Configuración de la aplicación DJANGO
+Una vez instaladas las dependencias, se debe ejecutar algunos comandos en DJANGO.
 
 Migraciones
 
@@ -55,9 +54,6 @@ Para acceder en el navegador agregar
 
 localhost:8000/Blog
 
-Si todo esta correcto se podria acceder a la aplicacion desde el navegador.
+Si todo esta correcto se podrá acceder a la aplicación desde el navegador.
 
 3- //Roadmap en definición aun///
-
-
-
