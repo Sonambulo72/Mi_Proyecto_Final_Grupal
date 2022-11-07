@@ -25,11 +25,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a href="{% url 'index-blog' %}">Inicio</a></li>
-                    <p></p>
                     <li class="nav-item"><a href="{% url 'list-post' %}"> Listar Vehiculos </a></li>
-                    <p></p>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a href="{% url 'blog-logout' %}">Logout</a></li>
+                    {% else %}
                     <li class="nav-item"><a href="{% url 'blog-login' %}">Login</a></li>
-                    <p></p>
+                    {% endif %}
                     <a href="http://localhost:8000/blog/about"> About</a>
                 </ul>
             </div>
