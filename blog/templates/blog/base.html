@@ -18,14 +18,14 @@
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'index-blog' %}">Mi blog de VEHICULOS</a>
+            <a class="navbar-brand" href="{% url 'index-blog' %}">Mi Portal de VEHICULOS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a href="{% url 'index-blog' %}">Inicio</a></li>
-                    <li class="nav-item"><a href="{% url 'list-post' %}"> Listar Vehiculos </a></li>
+                    <li class="nav-item"><a href="{% url 'index-blog' %}">Inicio<br></a></li>
+                    <li class="nav-item"><a href="{% url 'list-post' %}"> Listar</a></li>
                     {% if user.is_authenticated %}
                     <li class="nav-item"><a href="{% url 'blog-logout' %}">Logout</a></li>
                     {% else %}
@@ -43,8 +43,8 @@
         {% block header %}
         <div class="container">
             <div class="text-center my-5">
-                <h1 class="fw-bolder">Mi blog de vehiculos</h1>
-                <p class="lead mb-0">un blog de vehiculos</p>
+                <h2 class="fw-bolder">Mi portal de vehiculos</h2>
+                <p class="lead mb-0">Premium</p>
             </div>
         </div>
         {% endblock %}
