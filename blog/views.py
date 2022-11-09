@@ -24,7 +24,7 @@ class ListPost(ListView):
 
 class CreatePost(CreateView):
     model=Post
-    fields = ['title', 'short_content', 'content', 'image']
+    fields = ['title', 'short_content', 'content', 'image', 'prize']
     success_url = reverse_lazy("list-post")
 
 class DetailPost(DetailView):
@@ -32,7 +32,7 @@ class DetailPost(DetailView):
 
 class UpdatePost(UpdateView):
     model=Post
-    fields=['title', 'short_content', 'content', 'image']
+    fields=['title', 'short_content', 'content', 'image', 'prize']
     success_url = reverse_lazy("list-post")
 
 class DeletePost(DeleteView):
