@@ -17,4 +17,4 @@ urlpatterns = [
     path('about/', AboutView.as_view()),
     ]
 
-#ultima linea de about
+#path('createuserblog/', CreateUserBlog.as_view(), name="create-userblog"),

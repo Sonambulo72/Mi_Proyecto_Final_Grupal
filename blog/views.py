@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.admin import User
-from django.views.generic import TemplateView # vista de about
+from django.views.generic import TemplateView
 
 
 from django.shortcuts import render
@@ -52,7 +52,6 @@ class BlogLogin(LoginView):
 class BlogLogout(LogoutView):
     template_name = 'blog/blog_logout.html'
 
-
 class BlogSignUp(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy("blog-login")
@@ -66,3 +65,8 @@ class ProfileUpdate(UpdateView):
 class AboutView(TemplateView): #vista de about
     template_name = "blog/about.html"
 
+#clase de prueba de nuevo usuario
+'''class CreateUserBlog(UserCreationForm): #crear usuario nuevo
+    model= User
+    fields = ['username', 'first_name', 'last_name', 'email']
+    success_url = reverse_lazy("blog-login")'''
