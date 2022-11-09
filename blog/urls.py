@@ -2,6 +2,7 @@ from django.urls import path
 from blog.views import *
 from django.views.generic import TemplateView
 
+
 urlpatterns = [
     path('', index, name="index-blog"),
     path('list/', ListPost.as_view(), name="list-post"),
@@ -17,4 +18,3 @@ urlpatterns = [
     path('about/', AboutView.as_view()),
     ]
 
-#path('createuserblog/', CreateUserBlog.as_view(), name="create-userblog"),
