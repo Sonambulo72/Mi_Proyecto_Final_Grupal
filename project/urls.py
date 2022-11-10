@@ -25,6 +25,7 @@ from ejemplo.views import ( ListarPersona, monstrar_familiares, BuscarFamiliar,C
 from ejemplo.models import Familiar, Auto, Moto
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mi-familia/', monstrar_familiares), # import de mi-familia
@@ -37,6 +38,7 @@ urlpatterns = [
     path('mi-moto/cargarmotos',CargarMotos.as_view()),
     path('panel-familia/', include ('panel_familia.urls')),
     path('blog/', include('blog.urls')),
+    
     ]
 
 

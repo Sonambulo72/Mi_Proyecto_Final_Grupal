@@ -1,6 +1,7 @@
 from django.urls import path
 from blog.views import *
 from django.views.generic import TemplateView
+from blog.views import AltaUsuario
 
 
 urlpatterns = [
@@ -16,5 +17,6 @@ urlpatterns = [
     path('signup/', BlogSignUp.as_view(), name="blog-signup"),
     path('user-profile/<int:pk>', ProfileUpdate.as_view(), name="profile-update"),
     path('about/', AboutView.as_view()),
+    path('alta/', AltaUsuario.as_view())
     ]
 

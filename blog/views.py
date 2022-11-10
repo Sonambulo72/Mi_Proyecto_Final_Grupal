@@ -12,6 +12,7 @@ from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView,TemplateView
 from blog.models import Post
+from blog.forms import UsuarioForm, Buscar
 
 
 def index(request):
@@ -65,5 +66,26 @@ class ProfileUpdate(UpdateView):
 class AboutView(TemplateView): #vista de about
     template_name = "blog/about.html"
 
+
+class AltaUsuario(View):
+
+    form_class = UsuarioForm
+    template_name = 'blog/alta_usuario.html'
+    initial = {"nombre":"", "email":"", "contraseña":""}
+
+    def get(self, request):
+        form = self.form_class(initial=self.initial)
+        return render(request, self.template_name, {'form':form})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save()
+            msg_exito = f"se cargo con éxito el Usuario {form.cleaned_data.get('nombre')}"
+            form = self.form_class(initial=self.initial)
+            return render(request, self.template_name, {'form':form, 
+                                                        'msg_exito': msg_exito})
+        
+        return render(request, self.template_name, {"form": form})
 
 
