@@ -2,7 +2,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth.admin import User
 from django.views.generic import TemplateView
 from django.contrib import messages
@@ -12,7 +12,7 @@ from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView,TemplateView
 from blog.models import Post
-
+from django.contrib.auth import login,logout, authenticate
 
 def index(request):
     posts = Post.objects.order_by('-date_published').all()
@@ -64,6 +64,4 @@ class ProfileUpdate(UpdateView):
 
 class AboutView(TemplateView): #vista de about
     template_name = "blog/about.html"
-
-
 
