@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'ejemplo.apps.EjemploConfig',
     'blog.apps.BlogConfig',
     'panel_familia.apps.PanelFamiliaConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,5 @@ LOGIN_URL = "blog-login"
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CRISPY_TEMPLATE_PACK="bootstrap4"

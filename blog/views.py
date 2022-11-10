@@ -13,6 +13,10 @@ from django.views import View
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView, DetailView,TemplateView
 from blog.models import Post
 from django.contrib.auth import login,logout, authenticate
+from django.contrib import messages
+from django.shortcuts import render, redirect
+from blog.models import RegisterForm
+
 
 def index(request):
     posts = Post.objects.order_by('-date_published').all()
@@ -65,3 +69,16 @@ class ProfileUpdate(UpdateView):
 class AboutView(TemplateView): #vista de about
     template_name = "blog/about.html"
 
+
+# Create your views here.
+def register(response):
+    if response.method == "POST":
+        form = RegisterForm(response.POST)
+        if form.is_valid():
+            form.save()
+        
+        return redirect("/blog/login")
+
+    else:
+        form = RegisterForm()
+    return render(response, "blog/register.html", {"form":form})
