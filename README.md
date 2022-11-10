@@ -57,3 +57,5 @@ localhost:8000/Blog
 Si todo esta correcto se podrá acceder a la aplicación desde el navegador.
 
 3- //Roadmap en definición aun///
+
+Se continua trabajando en este punto. 
