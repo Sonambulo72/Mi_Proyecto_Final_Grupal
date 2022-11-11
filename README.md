@@ -32,6 +32,9 @@ instalación de las dependencias
 Para instalar las dependencias precisas ejecutar pip install, asegurándote que estas en la carpeta raiz. Por favor revisar la carpeta raíz requirements.txt para más información.
 
 > pip install -r requirements.txt
+> pip install Pillow
+> pip install whitenoise
+> pip install django-crispy-forms
 
 En algunos SO se requiere ejecutar con pip3 en lugar de pip.
 
