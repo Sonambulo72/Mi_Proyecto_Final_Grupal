@@ -77,7 +77,7 @@ def register(response):
         if form.is_valid():
             form.save()
         
-        return redirect("/blog/login")
+        return redirect("blog-logout")
 
     else:
         form = RegisterForm()
