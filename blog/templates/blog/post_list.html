@@ -5,7 +5,8 @@
         <a href="{% url 'blog-logout' %}">Salir</a>
         <a href="{% url 'create-post' %}">Crear un nuevo post</a>
         <a href="{% url 'profile-update' user.id %}">Actualizar Profile</a>
-           {% else %}
+    
+    {% else %}
         <a href="{% url 'blog-login' %}"> Ingresar</a>
     {% endif %}
     
